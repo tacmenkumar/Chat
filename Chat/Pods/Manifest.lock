@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (3.3.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - AlamofireNetworkActivityIndicator (1.0.1):
+    - Alamofire (~> 3.3)
+  - ENSwiftSideMenu (0.1.1)
+  - IQKeyboardManagerSwift (4.0.1)
+  - KOActivityIndicator (0.0.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - AlamofireNetworkActivityIndicator
+  - ENSwiftSideMenu
+  - IQKeyboardManagerSwift
+  - KOActivityIndicator
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
+  ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
+  IQKeyboardManagerSwift: e92246955e21dad73ad9dc89b80adb134d8bb395
+  KOActivityIndicator: 654299ef294243384510ef7821f46131e44e708b
+
+PODFILE CHECKSUM: 87ffda377b95a4d4e49dc4eb3243b1a4ad2acabf
+
+COCOAPODS: 1.0.0.beta.8
