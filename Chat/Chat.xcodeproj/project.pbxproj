@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D04C9121CD0B099004E49DC /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */; };
 		5D0841701CC91BC4004162CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08416F1CC91BC3004162CC /* HomeViewController.swift */; };
 		5D3036141CC8AB0D00A30D7E /* AppAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3036121CC8AB0D00A30D7E /* AppAlertViewController.swift */; };
 		5D3036151CC8AB0D00A30D7E /* AppAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3036131CC8AB0D00A30D7E /* AppAlertViewController.xib */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		3369571CD88AB33B0D6CB943 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		5D08416F1CC91BC3004162CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D3036121CC8AB0D00A30D7E /* AppAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAlertViewController.swift; sourceTree = "<group>"; };
 		5D3036131CC8AB0D00A30D7E /* AppAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppAlertViewController.xib; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 				B02F5BAA2EA37E04F12E7201 /* Pods-ChatUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D04C9101CD0B07D004E49DC /* ContactDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */,
+			);
+			path = ContactDetails;
 			sourceTree = "<group>";
 		};
 		5D08416E1CC91BAE004162CC /* Home */ = {
@@ -285,6 +295,7 @@
 				5DC0C2901CC7B09B0080A939 /* ParentView */,
 				5D4E4CB61CC767F300C2478F /* UserManagement */,
 				5D08416E1CC91BAE004162CC /* Home */,
+				5D04C9101CD0B07D004E49DC /* ContactDetails */,
 				5D2E1F791CCE3B4700115EA9 /* SideBar */,
 				5DB3BC731CC65AE5004250D4 /* Chat-Bridging-Header.h */,
 			);
@@ -598,6 +609,7 @@
 				5DC0C28F1CC7827D0080A939 /* AppActivityIndicator.swift in Sources */,
 				5DC0C2921CC7B0B00080A939 /* ParentViewController.swift in Sources */,
 				5D4E4CC41CC769C900C2478F /* NetworkManager.swift in Sources */,
+				5D04C9121CD0B099004E49DC /* ContactDetailsViewController.swift in Sources */,
 				5D4E4CBA1CC7680600C2478F /* RegisterViewController.swift in Sources */,
 				5DA85E5E1CCF40380085AF3B /* AppStoryBoardSegue.swift in Sources */,
 				5DA85E581CCE3C700085AF3B /* SideBarViewController.swift in Sources */,
