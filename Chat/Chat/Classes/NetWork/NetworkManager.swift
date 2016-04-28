@@ -9,17 +9,18 @@
 import UIKit
 import Alamofire
 
+
 class NetworkManager: NSObject {
     static let sharedInstance = NetworkManager()
-    let baseUrl = "https://enigmatic-basin-90863.herokuapp.com/"
+//    let baseUrl = "https://enigmatic-basin-90863.herokuapp.com/"
+    let baseUrl = "https://192.168.2.168:5000/"
     
     let defaultManager: Alamofire.Manager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             "192.168.2.168": .DisableEvaluation,
             "192.168.2.168:5000": .DisableEvaluation,
             "localhost:5000" : .DisableEvaluation,
-            "localhost" : .DisableEvaluation,
-            "enigmatic-basin-90863.herokuapp.com": .DisableEvaluation
+            "localhost" : .DisableEvaluation
         ]
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -42,6 +43,8 @@ class NetworkManager: NSObject {
      - returns: httpRequest
      */
     func ws(method:String, urlMethod: String, parameters: [String: AnyObject], headers: [String: String], containerView: UIView, successCallback: (result:AnyObject) -> Void, errorCallback: (result:AnyObject) -> Void) {
+        
+        
         let url = "\(baseUrl)\(urlMethod)"
         var methodToCall = Method.GET
         if method == "POST" {
@@ -100,4 +103,19 @@ class NetworkManager: NSObject {
         ];
         ws( "POST", urlMethod: "users/login", parameters: parameters, headers: headers, containerView: containerView, successCallback: successCallback, errorCallback: errorCallback )
     }
+    
+    /**
+     Login user
+     
+     - parameter email:        email
+     - parameter password:     password
+     */
+    func callWSSyncContacts(parameters:[String: AnyObject], containerView: UIView, successCallback: (result:AnyObject) -> Void, errorCallback: (result:AnyObject) -> Void){
+        let headers = [
+            "Content-Type": "application/json",
+            "Auth" : (AppDelegate.getAppDelegate().defaults.objectForKey("userinfo")?.stringForKey("usertoken"))! as String
+        ];
+        ws( "POST", urlMethod: "users/login", parameters: parameters, headers: headers, containerView: containerView, successCallback: successCallback, errorCallback: errorCallback )
+    }
+    
 }

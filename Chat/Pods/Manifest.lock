@@ -7,6 +7,7 @@ PODS:
   - ENSwiftSideMenu (0.1.1)
   - IQKeyboardManagerSwift (4.0.1)
   - KOActivityIndicator (0.0.2)
+  - ReachabilitySwift (2.3.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - ENSwiftSideMenu
   - IQKeyboardManagerSwift
   - KOActivityIndicator
+  - ReachabilitySwift
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
@@ -23,7 +25,8 @@ SPEC CHECKSUMS:
   ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
   IQKeyboardManagerSwift: e92246955e21dad73ad9dc89b80adb134d8bb395
   KOActivityIndicator: 654299ef294243384510ef7821f46131e44e708b
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
 
-PODFILE CHECKSUM: 87ffda377b95a4d4e49dc4eb3243b1a4ad2acabf
+PODFILE CHECKSUM: 4a86ff7d8a90eecec859ce45f7e17cbcb7ce7e89
 
 COCOAPODS: 1.0.0.beta.8

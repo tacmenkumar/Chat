@@ -29,8 +29,7 @@ class Utility: NSObject {
     
     func getViewControllerFromStoryboard(viewController: String) -> UIViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("SideBarViewController") as! SideBarViewController
-        return vc
+        return mainStoryboard.instantiateViewControllerWithIdentifier(viewController)
     }
     
     /**

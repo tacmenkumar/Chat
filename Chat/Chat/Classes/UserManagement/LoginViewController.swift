@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     }
     
     /**
-     Callback for register user
+     Callback for login user
      
      - parameter result: Response
      */
@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
         print(result)
         //Utility.sharedInstance.showAlert(self, title:"Login Success", message: "Logged in successfully.")
         isLoggedIn = true
+        AppDelegate.getAppDelegate().defaults.setObject(result, forKey: "userinfo")
         performSegueWithIdentifier("loginsegue", sender: self)
     }
     

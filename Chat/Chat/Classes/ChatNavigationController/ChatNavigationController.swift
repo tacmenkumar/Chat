@@ -13,7 +13,7 @@ class ChatNavigationController: ENSideMenuNavigationController, ENSideMenuDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sidebarVC =  Utility.sharedInstance.getViewControllerFromStoryboard("SideBarViewController")
+        let sidebarVC: SideBarViewController = Utility.sharedInstance.getViewControllerFromStoryboard("SideBarViewController") as! SideBarViewController
         sidebarVC.view.backgroundColor = (UIColor.blueColor()).colorWithAlphaComponent(0.0)
         sideMenu = ENSideMenu(sourceView: self.view, menuViewController: sidebarVC, menuPosition: .Left, blurStyle: .Dark)
         
@@ -26,37 +26,6 @@ class ChatNavigationController: ENSideMenuNavigationController, ENSideMenuDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - ENSideMenu Delegate
-    /**
-     Called when the the menu is about to appear
-     */
-    func sideMenuWillOpen() {
-        print("sideMenuWillOpen")
-    }
-    
-    /**
-     Called when menu is about to close
-     */
-    func sideMenuWillClose() {
-        print("sideMenuWillClose")
-    }
-    
-    /**
-     Called when the menu is closed
-     */
-    func sideMenuDidClose() {
-        print("sideMenuDidClose")
-    }
-    
-    /**
-     Called when the menu is opened
-     */
-    func sideMenuDidOpen() {
-        print("sideMenuDidOpen")
-    }
-    
-    
     
     /*
      // MARK: - Navigation

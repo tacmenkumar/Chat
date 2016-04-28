@@ -16,10 +16,10 @@ class ParentViewController: UIViewController, ENSideMenuDelegate {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*let btnBack = UIBarButtonItem(image: UIImage(named: "icn-left-arrow"), landscapeImagePhone: UIImage(named: "icn-arrow-white-left"),
+        let btnBack = UIBarButtonItem(image: UIImage(named: "icn-left-arrow"), landscapeImagePhone: UIImage(named: "icn-arrow-white-left"),
                                       style: .Plain, target: self, action: #selector(ParentViewController.goBack))
         btnBack.tintColor = UIColor.whiteColor()
-        self.navigationItem.setLeftBarButtonItem(btnBack, animated: true);*/
+        self.navigationItem.setLeftBarButtonItem(btnBack, animated: true);
         
         self.sideMenuController()?.sideMenu?.delegate = self
     }
@@ -41,10 +41,12 @@ class ParentViewController: UIViewController, ENSideMenuDelegate {
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
         print("sideMenuWillOpen")
+        self.view.userInteractionEnabled = false
     }
     
     func sideMenuWillClose() {
         print("sideMenuWillClose")
+        self.view.userInteractionEnabled = true
     }
     
     func sideMenuShouldOpenSideMenu() -> Bool {

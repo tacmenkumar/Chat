@@ -8,14 +8,18 @@
 
 import UIKit
 import CoreData
+import Contacts
 import IQKeyboardManagerSwift
 import AlamofireNetworkActivityIndicator
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var contactStore = CNContactStore()
+    var contacts = [CNContact]()
+    var defaults = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -110,6 +114,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+    
+    // MARK: - Contacts
+    /**
+     Get App Delegate
+     
+     - returns: appDelegate
+     */
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+
+    func requestForAccess(viewController: UIViewController, completionHandler: (accessGranted: Bool, accessError: NSError?) -> Void) {
+        let authorizationStatus = CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts)
+        
+        switch authorizationStatus {
+        case .Authorized:
+            completionHandler(accessGranted: true, accessError: nil)
+            
+        case .Denied, .NotDetermined:
+            self.contactStore.requestAccessForEntityType(CNEntityType.Contacts, completionHandler: { (access, accessError) -> Void in
+                if access {
+                    completionHandler(accessGranted: access, accessError: accessError)
+                }
+                else {
+                    if authorizationStatus == CNAuthorizationStatus.Denied {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            Utility.sharedInstance.showAlert(viewController, title: accessError!.localizedDescription, message: "Please allow the app to access your contacts through the Settings.")
+                        })
+                    }
+                }
+            })
+            
+        default:
+            completionHandler(accessGranted: false, accessError: nil)
         }
     }
 

@@ -10,6 +10,7 @@ pod 'AlamofireNetworkActivityIndicator'
 pod 'AlamofireImage'
 pod 'KOActivityIndicator'
 pod 'ENSwiftSideMenu'
+pod 'ReachabilitySwift'
 end
 
 target 'ChatTests' do
