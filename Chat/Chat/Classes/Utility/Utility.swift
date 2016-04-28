@@ -33,19 +33,4 @@ class Utility: NSObject {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         return mainStoryboard.instantiateViewControllerWithIdentifier(viewController)
     }
-    
-    /**
-     *  + (void) showCustomAlertViewWithTitle : (NSString*)title msg:(NSString*)Message :(UIViewController*)viewController{
-     CustomPopOverViewController * cpo = [[CustomPopOverViewController alloc]initWithNibName:@"CustomPopOverViewController" bundle:[NSBundle mainBundle]];
-     cpo.desciptionText = Message;
-     cpo.titleText = title;
-     cpo.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-     cpo.definesPresentationContext = YES;
-     cpo.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-     [viewController presentViewController:cpo animated:YES completion:^{
-     NSLog(@"Custom alert shown");
-     }];
-     }
-     */
-    
 }
