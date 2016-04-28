@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D04C9121CD0B099004E49DC /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */; };
+		5D04C9141CD0BED5004E49DC /* ContactNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04C9131CD0BED5004E49DC /* ContactNumberTableViewCell.swift */; };
+		5D04C9161CD0BEDE004E49DC /* EmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04C9151CD0BEDE004E49DC /* EmailTableViewCell.swift */; };
 		5D0841701CC91BC4004162CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08416F1CC91BC3004162CC /* HomeViewController.swift */; };
 		5D3036141CC8AB0D00A30D7E /* AppAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3036121CC8AB0D00A30D7E /* AppAlertViewController.swift */; };
 		5D3036151CC8AB0D00A30D7E /* AppAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3036131CC8AB0D00A30D7E /* AppAlertViewController.xib */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		3369571CD88AB33B0D6CB943 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		5D04C9131CD0BED5004E49DC /* ContactNumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNumberTableViewCell.swift; sourceTree = "<group>"; };
+		5D04C9151CD0BEDE004E49DC /* EmailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTableViewCell.swift; sourceTree = "<group>"; };
 		5D08416F1CC91BC3004162CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D3036121CC8AB0D00A30D7E /* AppAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAlertViewController.swift; sourceTree = "<group>"; };
 		5D3036131CC8AB0D00A30D7E /* AppAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppAlertViewController.xib; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				5D04C9111CD0B099004E49DC /* ContactDetailsViewController.swift */,
+				5D04C9131CD0BED5004E49DC /* ContactNumberTableViewCell.swift */,
+				5D04C9151CD0BEDE004E49DC /* EmailTableViewCell.swift */,
 			);
 			path = ContactDetails;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D04C9161CD0BEDE004E49DC /* EmailTableViewCell.swift in Sources */,
 				5D30361F1CC8BA7600A30D7E /* Utility.swift in Sources */,
 				5D4E4CBD1CC7682A00C2478F /* AppDelegate.swift in Sources */,
 				5DB3BC4A1CC65AB3004250D4 /* Chat.xcdatamodeld in Sources */,
@@ -619,6 +626,7 @@
 				5DA85E5B1CCE5DD40085AF3B /* ChatNavigationController.swift in Sources */,
 				5D30361D1CC8AF9E00A30D7E /* UIView+Extension.swift in Sources */,
 				5D3036141CC8AB0D00A30D7E /* AppAlertViewController.swift in Sources */,
+				5D04C9141CD0BED5004E49DC /* ContactNumberTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
