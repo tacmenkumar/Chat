@@ -11,8 +11,7 @@ import UIKit
 
 
 class Utility: NSObject {
-
-    
+   
     // sharedInstance
     static let sharedInstance = Utility()
     
