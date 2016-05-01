@@ -12,8 +12,10 @@ import Alamofire
 
 class NetworkManager: NSObject {
     static let sharedInstance = NetworkManager()
-//    let baseUrl = "https://enigmatic-basin-90863.herokuapp.com/"
-    let baseUrl = "https://192.168.2.168:5000/"
+    
+    // Base URL
+    let baseUrl = "https://enigmatic-basin-90863.herokuapp.com/"
+//  let baseUrl = "https://192.168.2.168:5000/"
     
     let defaultManager: Alamofire.Manager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
@@ -44,34 +46,39 @@ class NetworkManager: NSObject {
      */
     func ws(method:String, urlMethod: String, parameters: [String: AnyObject], headers: [String: String], containerView: UIView, successCallback: (result:AnyObject) -> Void, errorCallback: (result:AnyObject) -> Void) {
         
-        
-        let url = "\(baseUrl)\(urlMethod)"
-        var methodToCall = Method.GET
-        if method == "POST" {
-            methodToCall = Method.POST
-        }
-        AppActivityIndicator.sharedInstance.showLoader(containerView, message: "Loading...")
-        print(url)
-        self.defaultManager.request(methodToCall, url, parameters: parameters, encoding: .JSON, headers: headers)
-            .responseJSON{  response in
-                AppActivityIndicator.sharedInstance.hideLoader(containerView)
-                switch response.result {
-                case .Success(let JSON):
-                    let response = JSON as! NSDictionary
-                    if (response["status"] as? Int) == 1 {
-                        successCallback(result: response)
-                    }else{
-                        let arrErrors = response.objectForKey("errors") as! NSArray
-                        let errors = arrErrors.objectAtIndex(0) as! NSDictionary
-                        if ((errors.objectForKey("message") as? String) != nil) {
-                            print(response.objectForKey("message"))
-                            errorCallback(result: errors)
-                        }
-                    }
-                case .Failure(let error):
-                    print("Request failed with error: \(error)")
-                    errorCallback(result: error)
+        AppDelegate.getAppDelegate().checkNetwork { (reachability) in
+            if(reachability.isReachable()){
+                let url = "\(self.baseUrl)\(urlMethod)"
+                var methodToCall = Method.GET
+                if method == "POST" {
+                    methodToCall = Method.POST
                 }
+                AppActivityIndicator.sharedInstance.showLoader(containerView, message: "Loading...")
+                print(url)
+                self.defaultManager.request(methodToCall, url, parameters: parameters, encoding: .JSON, headers: headers)
+                    .responseJSON{  response in
+                        AppActivityIndicator.sharedInstance.hideLoader(containerView)
+                        switch response.result {
+                        case .Success(let JSON):
+                            let response = JSON as! NSDictionary
+                            if (response["status"] as? Int) == 1 {
+                                successCallback(result: response)
+                            }else{
+                                let arrErrors = response.objectForKey("errors") as! NSArray
+                                let errors = arrErrors.objectAtIndex(0) as! NSDictionary
+                                if ((errors.objectForKey("message") as? String) != nil) {
+                                    print(response.objectForKey("message"))
+                                    errorCallback(result: errors)
+                                }
+                            }
+                        case .Failure(let error):
+                            print("Request failed with error: \(error)")
+                            errorCallback(result: error)
+                        }
+                }
+            }else{
+                print(reachability.description)
+            }
         }
     }
     
